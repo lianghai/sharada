@@ -1,0 +1,58 @@
+languagesystem DFLT dflt;
+languagesystem shrd dflt; # Sharada
+
+include(lookups.fea);
+
+# = Universal Shaping Engine
+
+# == OpenType feature application I
+
+# === a. Basic cluster formation GSUB
+
+# ==== Default glyph pre-processing group
+
+# feature locl {} locl;
+# feature ccmp {} ccmp;
+
+# feature nukt {} nukt;
+# feature akhn {} akhn;
+
+# ==== Reordering group
+
+# feature rphf {} rphf;
+# feature pref {} pref;
+
+# ==== Orthographic unit shaping group
+
+# feature rkrf {} rkrf;
+# feature abvf {} abvf;
+# feature blwf {} blwf;
+# feature half {} half;
+# feature pstf {} pstf;
+# feature vatu {} vatu;
+# feature cjct {} cjct;
+
+# == OpenType feature application II
+
+# === b. Standard typographical features, GSUB
+
+# feature pres {} pres;
+# feature abvs {} abvs;
+# feature blws {} blws;
+# feature psts {} psts;
+
+# feature haln {} haln;
+
+# feature rclt {} rclt;
+# feature rlig {} rlig;
+
+# feature calt {} calt;
+# feature clig {} clig;
+# feature liga {} liga;
+
+# === d. Positional features, GPOS
+
+# feature dist {} dist;
+# feature kern {} kern;
+# feature abvm {} abvm;
+# feature blwm {} blwm;
