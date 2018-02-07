@@ -1,3 +1,5 @@
+# https://www.microsoft.com/typography/OpenTypeDev/USE/intro.htm
+
 languagesystem DFLT dflt;
 languagesystem shrd dflt; # Sharada
 
