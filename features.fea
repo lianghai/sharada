@@ -1,11 +1,11 @@
+# = Universal Shaping Engine
+
 # https://www.microsoft.com/typography/OpenTypeDev/USE/intro.htm
 
 languagesystem DFLT dflt;
 languagesystem shrd dflt; # Sharada
 
 include(lookups.fea);
-
-# = Universal Shaping Engine
 
 # == OpenType feature application I
 
@@ -14,7 +14,10 @@ include(lookups.fea);
 # ==== Default glyph pre-processing group
 
 # feature locl {} locl;
-# feature ccmp {} ccmp;
+
+feature ccmp {
+  lookup ccmp;
+} ccmp;
 
 # feature nukt {} nukt;
 # feature akhn {} akhn;
@@ -28,11 +31,21 @@ include(lookups.fea);
 
 # feature rkrf {} rkrf;
 # feature abvf {} abvf;
-# feature blwf {} blwf;
+
+feature blwf {
+  lookup forms.consonant.below;
+  lookup forms.consonant.below.jihvamuliya;
+} blwf;
+
 # feature half {} half;
 # feature pstf {} pstf;
 # feature vatu {} vatu;
-# feature cjct {} cjct;
+
+feature cjct {
+  lookup _workaround.jihvamuliya_and_upadhmaniya;
+} cjct;
+
+# == Glyph reordering
 
 # == OpenType feature application II
 
@@ -40,9 +53,12 @@ include(lookups.fea);
 
 # feature pres {} pres;
 # feature abvs {} abvs;
-# feature blws {} blws;
-# feature psts {} psts;
 
+feature blws {
+  lookup conjuncts.consonant_vowel;
+} blws;
+
+# feature psts {} psts;
 # feature haln {} haln;
 
 # feature rclt {} rclt;

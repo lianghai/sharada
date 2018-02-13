@@ -1,0 +1,108 @@
+lookup ccmp {
+  sub Signau by Signaa Signo;
+} ccmp;
+
+lookup forms.consonant.below {
+  sub Virama Ka by Ka.below;
+  sub Virama Kha by Kha.below;
+  sub Virama Ga by Ga.below;
+  sub Virama Gha by Gha.below;
+  sub Virama Nga by Nga.below;
+  sub Virama Ca by Ca.below;
+  sub Virama Cha by Cha.below;
+  sub Virama Ja by Ja.below;
+  sub Virama Jha by Jha.below;
+  sub Virama Nya by Nya.below;
+  sub Virama Tta by Tta.below;
+  sub Virama Ttha by Ttha.below;
+  sub Virama Dda by Dda.below;
+  sub Virama Ddha by Ddha.below;
+  sub Virama Nna by Nna.below;
+  sub Virama Ta by Ta.below;
+  sub Virama Tha by Tha.below;
+  sub Virama Da by Da.below;
+  sub Virama Dha by Dha.below;
+  sub Virama Na by Na.below;
+  sub Virama Pa by Pa.below;
+  sub Virama Pha by Pha.below;
+  sub Virama Ba by Ba.below;
+  sub Virama Bha by Bha.below;
+  sub Virama Ma by Ma.below;
+  sub Virama Ya by Ya.below;
+  sub Virama Ra by Ra.below;
+  sub Virama La by La.below;
+  sub Virama Lla by Lla.below;
+  sub Virama Va by Va.below;
+  sub Virama Sha by Sha.below;
+  sub Virama Ssa by Ssa.below;
+  sub Virama Sa by Sa.below;
+  sub Virama Ha by Ha.below;
+} forms.consonant.below;
+
+lookup forms.consonant.below.jihvamuliya {
+  sub Jihvamuliya [Ka Kha]' by [Ka.below Kha.below];
+} forms.consonant.below.jihvamuliya;
+
+lookup _workaround.jihvamuliya_and_upadhmaniya {
+
+  # DirectWrite currently doesn't actually reorder Consonant_Prefixed: "Note that the category REPHA is not currently supported by USE."
+  # HarfBuzz does reorder.
+
+  # Jihvamuliya's InSC is currently wrongly assigned as Consonant_Prefixed, thus its reordering should always be prevented:
+
+  sub Jihvamuliya Ka.below by JihvamuliyaKa;
+  sub Jihvamuliya Kha.below by JihvamuliyaKha;
+
+  # Upadhmaniya should indeed be Consonant_Prefixed and be reordered, but preventing reordering can make the font behave consistently:
+
+  sub Upadhmaniya Pa by Upadhmaniya_Pa;
+  sub Upadhmaniya Pha by Upadhmaniya_Pha;
+
+} _workaround.jihvamuliya_and_upadhmaniya;
+
+lookup conjuncts.consonant_vowel {
+
+  sub Ka Signu by KaSignu;
+  sub Ka Signuu by KaSignuu;
+  sub Ga Signu by GaSignu;
+  sub Ga Signuu by GaSignuu;
+  sub Jha Signu by JhaSignu;
+  sub Jha Signuu by JhaSignuu;
+  sub Nya Signu by NyaSignu;
+  sub Nya Signuu by NyaSignuu;
+  sub Dda Signu by DdaSignu;
+  sub Dda Signuu by DdaSignuu;
+  sub Ta Signu by TaSignu;
+  sub Ta Signuu by TaSignuu;
+  sub Bha Signu by BhaSignu;
+  sub Bha Signuu by BhaSignuu;
+  sub Ra Signu by RaSignu;
+  sub Ra Signuu by RaSignuu;
+  sub Sha Signu by ShaSignu;
+  sub Sha Signuu by ShaSignuu;
+
+  sub Ka.below Signu by KaSignu.below;
+  sub Ka.below Signuu by KaSignuu.below;
+  sub Ga.below Signu by GaSignu.below;
+  sub Ga.below Signuu by GaSignuu.below;
+  sub Jha.below Signu by JhaSignu.below;
+  sub Jha.below Signuu by JhaSignuu.below;
+  sub Nya.below Signu by NyaSignu.below;
+  sub Nya.below Signuu by NyaSignuu.below;
+  sub Dda.below Signu by DdaSignu.below;
+  sub Dda.below Signuu by DdaSignuu.below;
+  sub Ta.below Signu by TaSignu.below;
+  sub Ta.below Signuu by TaSignuu.below;
+  sub Bha.below Signu by BhaSignu.below;
+  sub Bha.below Signuu by BhaSignuu.below;
+  sub Ra.below Signu by RaSignu.below;
+  sub Ra.below Signuu by RaSignuu.below;
+  sub Sha.below Signu by ShaSignu.below;
+  sub Sha.below Signuu by ShaSignuu.below;
+
+  # From lookup _workaround.jihvamuliya_and_upadhmaniya:
+
+  sub JihvamuliyaKa Signu by JihvamuliyaKaSignu;
+  sub JihvamuliyaKa Signuu by JihvamuliyaKaSignuu;
+
+} conjuncts.consonant_vowel;
