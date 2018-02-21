@@ -55,7 +55,9 @@ feature cjct {
 # feature abvs {} abvs;
 
 feature blws {
-  lookup conjuncts.consonant_vowel;
+  lookup alt.ka;
+  lookup alt.vowel_sign_u_and_uu;
+  lookup conjunct.ru;
 } blws;
 
 # feature psts {} psts;

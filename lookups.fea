@@ -60,49 +60,30 @@ lookup _workaround.jihvamuliya_and_upadhmaniya {
 
 } _workaround.jihvamuliya_and_upadhmaniya;
 
-lookup conjuncts.consonant_vowel {
+lookup alt.ka {
+  sub [Ka Ka.below JihvamuliyaKa] by [Ka.alt Ka.alt.below JihvamuliyaKa.alt];
+} alt.ka;
 
-  sub Ka Signu by KaSignu;
-  sub Ka Signuu by KaSignuu;
-  sub Ga Signu by GaSignu;
-  sub Ga Signuu by GaSignuu;
-  sub Jha Signu by JhaSignu;
-  sub Jha Signuu by JhaSignuu;
-  sub Nya Signu by NyaSignu;
-  sub Nya Signuu by NyaSignuu;
-  sub Dda Signu by DdaSignu;
-  sub Dda Signuu by DdaSignuu;
-  sub Ta Signu by TaSignu;
-  sub Ta Signuu by TaSignuu;
-  sub Bha Signu by BhaSignu;
-  sub Bha Signuu by BhaSignuu;
-  sub Ra Signu by RaSignu;
-  sub Ra Signuu by RaSignuu;
-  sub Sha Signu by ShaSignu;
-  sub Sha Signuu by ShaSignuu;
+lookup alt.vowel_sign_u_and_uu {
 
-  sub Ka.below Signu by KaSignu.below;
-  sub Ka.below Signuu by KaSignuu.below;
-  sub Ga.below Signu by GaSignu.below;
-  sub Ga.below Signuu by GaSignuu.below;
-  sub Jha.below Signu by JhaSignu.below;
-  sub Jha.below Signuu by JhaSignuu.below;
-  sub Nya.below Signu by NyaSignu.below;
-  sub Nya.below Signuu by NyaSignuu.below;
-  sub Dda.below Signu by DdaSignu.below;
-  sub Dda.below Signuu by DdaSignuu.below;
-  sub Ta.below Signu by TaSignu.below;
-  sub Ta.below Signuu by TaSignuu.below;
-  sub Bha.below Signu by BhaSignu.below;
-  sub Bha.below Signuu by BhaSignuu.below;
-  sub Ra.below Signu by RaSignu.below;
-  sub Ra.below Signuu by RaSignuu.below;
-  sub Sha.below Signu by ShaSignu.below;
-  sub Sha.below Signuu by ShaSignuu.below;
+  sub
+    [
+      Ka.alt Ka.alt.below JihvamuliyaKa.alt
+      Ga Ga.below
+      Jha Jha.below
+      Nya Nya.below
+      Dda Dda.below
+      Ta Ta.below
+      Bha Bha.below
+      Ra Ra.below
+      Sha Sha.below
+    ]
+    [Signu Signuu]'
+  by
+    [Signu.alt Signuu.alt];
 
-  # From lookup _workaround.jihvamuliya_and_upadhmaniya:
+} alt.vowel_sign_u_and_uu;
 
-  sub JihvamuliyaKa Signu by JihvamuliyaKaSignu;
-  sub JihvamuliyaKa Signuu by JihvamuliyaKaSignuu;
-
-} conjuncts.consonant_vowel;
+lookup conjunct.ru {
+  sub Ra Signu by RU;
+} conjunct.ru;
